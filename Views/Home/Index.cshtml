@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+
+        body {
+            background-color: skyblue;
+        }
+
+
+        .vertical .carousel-inner {
+            height: 100%;
+        }
+
+
+
+        .carousel.vertical .active {
+            top: 0;
+        }
+
+        .carousel.vertical .next {
+            top: 100%;
+        }
+
+        .carousel.vertical .prev {
+            top: -100%;
+        }
+
+            .carousel.vertical .next.left,
+            .carousel.vertical .prev.right {
+                top: 0;
+            }
+
+        .carousel.vertical .active.left {
+            top: -100%;
+        }
+
+        .carousel.vertical .active.right {
+            top: 100%;
+        }
+    </style>
+
+
+
+    <div id="myCarousel" class="carousel slide vertical" data-ride="carousel" style="overflow: hidden">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="~/Photos/1Y0UYuGcFGSCfs5Eexafq6A.png" alt="" style="width: 100%;">
+            </div>
+
+            <div class="item">
+                <img src="~/Photos/SA-Web-Developer.jpg" alt="" style="width: 100%;">
+            </div>
+
+            <div class="item">
+                <img src="~/Photos/th.jpg" alt="" style="width: 100%;">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" data-target="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" data-target="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Information</h5>
+            <p class="card-text">
+                Notre ambition est de donner à tous nos apprenants les codes de réussite incontournables permettant de réussir dans un secteur exigeant qui demande expertise et compréhension des enjeux économiques, financiers et stratégiques de l’entreprise, ainsi qu’un sens aigu de la relation client.
+
+                L’objectif de notre école d’informatique à Paris, Lyon, Toulouse est de révéler des talents et amener chacun de nos apprenants au plus haut niveau de compétences, quel que soit leur parcours initial !
+
+                Nous voulons que chaque apprenant, à l’issue de sa formation, trouve sa place et assure son évolution au sein du monde professionnel, notamment à travers les métiers suivants :
+
+                exploitation,
+                production,
+                responsabilité de services,
+                gestion ou conduite de projets,
+                management…
+            </p>
+        </div>
+    </div>
+</asp:Content>

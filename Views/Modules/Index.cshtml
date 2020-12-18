@@ -1,0 +1,86 @@
+﻿@model IEnumerable<WebApplicationEcoleWeb.Models.Module>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Resumer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Logo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chapitre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Objectifs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreRequis)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duree)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Resumer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Logo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chapitre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Objectifs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreRequis)
+        </td>
+        <td>
+            @if (Session["roleUtilisateur"] != null)
+            {
+                if (Session["roleUtilisateur"].Equals("Administrateur"))
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                }
+            }
+
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+
+
+            @if (Session["roleUtilisateur"] != null)
+            {
+                if (Session["roleUtilisateur"].Equals("Administrateur"))
+                {
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                }
+            }
+
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,75 @@
+﻿@model WebApplicationEcoleWeb.Models.Module
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Module</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resumer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resumer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Logo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Logo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chapitre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chapitre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Objectifs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Objectifs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PreRequis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PreRequis)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

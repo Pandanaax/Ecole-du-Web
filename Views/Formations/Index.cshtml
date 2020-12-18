@@ -1,0 +1,128 @@
+﻿@model IEnumerable<WebApplicationEcoleWeb.Models.Formation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Durée)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateDebut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateFin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreInscrit)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Durée)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateDebut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateFin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreInscrit)
+            </td>
+            <td>
+                @if (Session["roleUtilisateur"] != null)
+                {
+                    if (Session["roleUtilisateur"].Equals("Administrateur"))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+
+                    }
+                }
+
+                @if (Session["roleUtilisateur"] != null)
+                {
+                    if (Session["roleUtilisateur"].Equals("Administrateur"))
+                    {
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id });
+                    }
+                }
+
+                @Html.ActionLink("Details", "Details", new { id = item.Id })
+
+                @if (Session["roleUtilisateur"] == null)
+                {
+                    @Html.ActionLink("Inscription Register", "Register", "Account")
+                }
+
+                @if (Session["roleUtilisateur"] != null)
+                {
+                    if (Session["roleUtilisateur"].Equals("Stagiaire"))
+                    {
+                        @Html.ActionLink("Inscription à la Formation", "Inscription", "Formations", new { id = item.Id })
+                    }
+                }
+                
+
+
+
+                </td>
+                </tr>
+                    }
+
+
+</table>
+<style>
+
+    body {
+        background-color: antiquewhite;
+    }
+
+
+    .vertical .carousel-inner {
+        height: 100%;
+    }
+
+
+
+    .carousel.vertical .active {
+        top: 0;
+    }
+
+    .carousel.vertical .next {
+        top: 100%;
+    }
+
+    .carousel.vertical .prev {
+        top: -100%;
+    }
+
+        .carousel.vertical .next.left,
+        .carousel.vertical .prev.right {
+            top: 0;
+        }
+
+    .carousel.vertical .active.left {
+        top: -100%;
+    }
+
+    .carousel.vertical .active.right {
+        top: 100%;
+    }
+</style>
